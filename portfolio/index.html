@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Portfolio</title>
+      <meta name="author" content="jeremy dowe">
+      <meta name="description" content="wearepow.co portfolio website">
+      <meta name="keywords" content="keywords,here">
+      <link rel="stylesheet" href="css/normalize.css" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/base.css">
+      <link rel="stylesheet" media="screen and (min-width: 1081px)" href="css/desktop.css">
+      <link rel="stylesheet" media="screen and (min-width: 751px) and (max-width: 1080px)" href="css/tablet.css">
+      <link rel="stylesheet" media="screen and (min-width: 415px) and (max-width: 750px)" href="css/mobile-large.css">
+      <link rel="stylesheet" media="screen and (min-width: 0px) and (max-width: 414px) and (orientation: portrait)" href="css/mobile-small.css">
+  </head>
+  <body>
+    <header role="banner">
+      <nav role="navigation">
+        <div class="wrapper">
+          <a href="#" title="logotype" class="logotype">wearepow.co</a>
+          <ul class="navItems">
+            <li role="menuitem" class="services"><a href="#" title="services">services</a></li>
+            <li role="menuitem" class="projects"><a href="#" title="projects">projects</a></li>
+            <li role="menuitem" class="who"><a href="#" title="who">who</a></li>
+            <li role="menuitem" class="enquires"><a href="#" title="enquires">enquires</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="viewport">
+        <section class="mainBanner">
+          <div class="mainBannerHeading"></div>
+          <article class="mainBannerContent">
+            <h1>Think before you create.</h1>
+            <h3>Every image tells a story. Every project counts.</h3>
+            <button class="startHere">Start Here</button>
+          </article>
+        </section>
+      </section>
+      <section class="mainView">
+        <div class="wrapper">
+          <h3>Selected Projects</h3>
+          <p>Hover over cards to learn more about projects</p>
+          <form class="darkMode" method="GET" action="">
+            <div class="OnOffSwitch">
+                <input type="checkbox" name="dark_mode" class="OnOffSwitchCheckbox" id="myOnOffSwitch">
+                <label class="OnOffSwitchLabel" for="myOnOffSwitch"></label>
+            </div>
+            <label for="myOnOffSwitch" class="darkModeLabel">Dark Mode</label>
+          </form>
+        </div>
+        <article class="cards">
+          <div class="card card01"></div>
+          <div class="card card02"></div>
+          <div class="card card03 cardActive"></div>
+          <div class="card card04"></div>
+          <div class="card card05"></div>
+        </article>
+      </section>
+    </main>
+    <footer role="contentinfo"><p>copyright &copy; 2019 Jeremy Dowe.</footer>
+    <script src="js/main.js" async defer></script>
+  </body>
+</html>

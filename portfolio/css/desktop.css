@@ -1,0 +1,61 @@
+/* Banner Viewport -- Desktop */
+
+.viewport {
+  position: relative;
+  display: block;
+  font-family: 'Montserrat';
+  font-weight: normal;
+  font-size: 1em;
+  padding: 0;
+  margin: 0;
+}
+
+nav.navigation {
+  position: fixed;
+  width: 100vw;
+  margin: 0;
+}
+
+nav ul.navItems {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.wrapper {
+  width: 770px;
+  margin: 0 auto;
+}
+
+.mainBanner {
+  height: 100vh;
+  position: relative;
+  background-position: center center;
+}
+
+.mainBannerHeading {
+  width: 480px;
+  height: 480px;
+  left: 50%;
+  margin-left: -240px;
+  top: 45vh;
+  margin-top: -240px;
+}
+
+.mainBannerContent h1 {
+  font-size: 1.6em;
+}
+
+.mainBannerContent h3 {
+  font-size: 1.1em;
+}
+
+.mainBannerContent button {
+  font-size: 1.25em;
+  height: 3.2em;
+  padding: 0 30px;
+  margin-top: 1em;
+  border-radius: 5px;
+}
+
+/* Main Viewport -- Desktop */
