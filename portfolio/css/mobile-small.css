@@ -10,7 +10,7 @@
   margin: 0;
 }
 
-nav.navigation {
+[role=navigation] {
   position: fixed;
   width: 94vw;
   margin: 3vw;
@@ -19,8 +19,12 @@ nav.navigation {
   box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.15);
 }
 
-nav ul.navItems {
+[role=navigation] ul.navItems {
   display: none;
+}
+
+[role=menu] {
+  display: block;
 }
 
 .wrapper {
@@ -48,10 +52,12 @@ nav ul.navItems {
 .mainBannerContent h1 {
   margin-top: -1.7em;
   font-size: 1.6em;
+  font-weight: 700;
 }
 
 .mainBannerContent h3 {
   font-size: 1.1em;
+  font-weight: 500;
 }
 
 .mainBannerContent button {

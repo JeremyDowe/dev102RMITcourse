@@ -10,16 +10,14 @@
   margin: 0;
 }
 
-nav.navigation {
-  position: fixed;
-  width: 100vw;
-  margin: 0;
-}
-
-nav ul.navItems {
+.navItems {
   display: flex;
   align-items: center;
   flex-direction: row;
+}
+
+[role=menu] {
+  display: none;
 }
 
 .wrapper {
@@ -44,10 +42,12 @@ nav ul.navItems {
 
 .mainBannerContent h1 {
   font-size: 1.6em;
+  font-weight: 700;
 }
 
 .mainBannerContent h3 {
   font-size: 1.1em;
+  font-weight: 500;
 }
 
 .mainBannerContent button {

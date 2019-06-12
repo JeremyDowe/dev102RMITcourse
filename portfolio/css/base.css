@@ -1,25 +1,43 @@
 :root {
-  --bgcolor: rgb(255,255,255);
+  --bgcolor: rgb(251,251,251);
   --textcolor: rgb(55,55,55);
+  --headerbg: rgb(255,255,255);
+  --footerbgcolor: rgb(55,55,55);
+  --footertextcolor: rgb(251,251,251);
+  --menuitemtextcolor: rgb(5,5,5);
+  --menuitemactivecolor: rgb(112,112,112);
 }
 
-html, body {
+html {
+  min-height: 100vh;
+}
+
+body {
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-size: 1em;
   padding: 0;
   margin: 0;
-}
-
-body {
+  width: 100%;
+  position: relative;
   background-color: var(--bgcolor);
   color: var(--textcolor);
 }
 
 @supports (background-color: var(--bgcolor)) {
     body[data-theme=dark] {
-      --bgcolor: rgb(55,55,55);
+      --bgcolor: rgb(28,29,27);
       --textcolor: rgb(235,235,235);
+      --headerbg: rgb(23,23,23);
+      --footerbgcolor: rgb(23,23,23);
+      --footertextcolor: rgb(205,205,205);
+      --menuitemtextcolor: rgb(255,255,255);
+      --menuitemactivecolor: rgb(222,222,222);
     }
+}
+
+main, .viewport {
+  width: 100%;
+  padding-bottom: 80px;
 }
 
 /* Reset */
@@ -29,25 +47,31 @@ p {
   margin: 0;
 }
 
-a:link, a:active, button {
+a, a:visited, button {
   outline: none;
-}
-
-main {
-  overflow-x: hidden;
 }
 
 /* Header Viewport */
 
 [role=navigation] {
-  position: absolute;
-  background-color: white;
-  font-size: 1em;
-  height: 1.8em;
-  width: 100vw;
-  margin: 0;
+  position: fixed;
+  background-color: var(--headerbg);
+  font-size: 16px;
+  height: 30px;
+  width: 100%;
   padding: 1.6em 0;
   z-index: 100;
+}
+
+.wrapper {
+  position: relative;
+}
+
+[role=menu] {
+  position: absolute;
+  right: 0px;
+  top: -12px;
+  display: none;
 }
 
 nav ul.navItems {
@@ -72,23 +96,25 @@ nav ul.navItems {
 
 [role=menuitem] a {
   text-decoration: none;
-  font-weight: normal;
-  color: #999;
+  font-weight: 500;
+  color: var(--menuitemtextcolor);
 }
 
-nav ul li:first-child a {
-  color: #555;
+[role=menuitem]:first-child a {
+  color: color: var(--menuitemactivecolor);
 }
 
 nav a.logotype {
+  font-family: 'Roboto', sans-serif;
+  color: var(--menuitemtextcolor);
+  font-weight: 700;
   text-align: left;
   display: inline-flex;
   padding-left: 1.5em;
-  font-size: 16px;
+  text-transform: uppercase;
+  font-size: 14px;
   line-height: 1.8em;
   text-decoration: none;
-  font-weight: bold;
-  color: #222;
 }
 
 .mainBanner {
@@ -134,13 +160,13 @@ nav a.logotype {
 .mainBannerContent h3 {
   font-family: 'Montserrat';
   color: white;
-  font-weight: 200;
+  font-weight: 300;
   letter-spacing: -0.01em;
 }
 
 .mainBannerContent button {
   background-image: linear-gradient(to bottom right, rgb(0,160,90), rgb(0,130,73));
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   color: white;
   font-size: 1.5vw;
   font-weight: 600;
@@ -193,8 +219,10 @@ nav a.logotype {
   flex-direction: row;
   align-items: baseline;
   justify-content: space-between;
+  list-style: none;
   margin: 0 3em;
   overflow: hidden;
+  padding: 0;
   padding-top: 1em;
   cursor: pointer;
   height: 315px;
@@ -230,8 +258,8 @@ nav a.logotype {
 .darkMode {
   display: block;
   position: absolute;
-  top: 1.1em;
-  right: 22vw;
+  top: -4%;
+  right: -4%;
   width: 110px;
 }
 
@@ -273,23 +301,33 @@ nav a.logotype {
     transition: all 0.1s ease-in 0s;
 }
 .OnOffSwitchCheckbox:checked + .OnOffSwitchLabel {
-    background-color: #3f0ea3;
+    background-color: rgb(209, 84, 84);
 }
 .OnOffSwitchCheckbox:checked + .OnOffSwitchLabel, .OnOffSwitchCheckbox:checked + .OnOffSwitchLabel:before {
-   border-color: rgba(33,33,33,0.3);
+   border-color: rgba(200, 74, 74, 0.8);
 }
 .OnOffSwitchCheckbox:checked + .OnOffSwitchLabel:before {
     right: 50px;
 }
 
-
 /* Footer */
 
 footer {
-  background-color: rgb(35,35,35);
-  height: 3em;
-  padding-top: 2em;
-  color: rgb(233,233,233);
+  background-color: var(--footerbgcolor);
+  color: var(--footertextcolor);
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  position: absolute;
+  display: block;
+  bottom: 0;
+  width: 100%;
+  height: 48px;
+  padding-top: 32px;
   text-align: center;
   vertical-align: middle;
+}
+
+footer span {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: 600;
 }
