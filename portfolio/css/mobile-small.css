@@ -3,7 +3,7 @@
 .viewport {
   position: relative;
   display: block;
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-weight: normal;
   font-size: 1em;
   padding: 0;

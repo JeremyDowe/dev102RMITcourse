@@ -8,10 +8,6 @@
   --menuitemactivecolor: rgb(112,112,112);
 }
 
-html {
-  min-height: 100vh;
-}
-
 body {
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-size: 1em;
@@ -105,7 +101,7 @@ nav ul.navItems {
 }
 
 nav a.logotype {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: var(--menuitemtextcolor);
   font-weight: 700;
   text-align: left;
@@ -151,22 +147,21 @@ nav a.logotype {
 }
 
 .mainBannerContent h1 {
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   color: white;
   font-weight: 600;
   letter-spacing: 0.03em;
 }
 
 .mainBannerContent h3 {
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   color: white;
   font-weight: 300;
   letter-spacing: -0.01em;
 }
 
 .mainBannerContent button {
-  background-image: linear-gradient(to bottom right, rgb(0,160,90), rgb(0,130,73));
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: white;
   font-size: 1.5vw;
   font-weight: 600;
@@ -176,6 +171,7 @@ nav a.logotype {
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  background-image: linear-gradient(to bottom right, rgb(0,160,90), rgb(0,130,73));
 }
 
 .mainBannerContent button:hover {
@@ -313,9 +309,9 @@ nav a.logotype {
 /* Footer */
 
 footer {
+  font-family: 'Montserrat', sans-serif;  
   background-color: var(--footerbgcolor);
   color: var(--footertextcolor);
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-weight: 300;
   position: absolute;
   display: block;
@@ -328,6 +324,6 @@ footer {
 }
 
 footer span {
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
 }

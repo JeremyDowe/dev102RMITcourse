@@ -3,7 +3,7 @@
 .viewport {
   position: relative;
   display: block;
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-weight: normal;
   font-size: 1em;
   padding: 0;
@@ -59,3 +59,7 @@
 }
 
 /* Main Viewport -- Desktop */
+
+.mainView .cards .cardActive {
+  max-width: 245px;
+}
