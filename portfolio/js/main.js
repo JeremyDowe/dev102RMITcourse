@@ -14,15 +14,17 @@ darkmodeSwitch.addEventListener('change', function(event){
 window.addEventListener('scroll', function(event){
   let mouse_y = window.pageYOffset;
   let el = document.querySelector('nav');
-  if (mouse_y > 180){
+  if (mouse_y > 240){
       el.style.position = 'fixed';
       el.classList.add('sticky');
-      if (mouse_y == 520) {
+      if (mouse_y <= 999) {
           el.style.position = 'absolute';
           el.style.top = 0;
       }
-  } else {
-      el.style.position = 'absolute';
+  } else if (mouse_y >= 1000) {
       el.classList.remove('sticky');
+  } else {
+    el.style.position = 'absolute';
+    el.classList.remove('sticky');
   }
 });

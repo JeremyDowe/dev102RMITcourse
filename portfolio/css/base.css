@@ -5,6 +5,7 @@
   --footertextcolor: rgb(251,251,251);
   --menuitemtextcolor: rgb(204,204,203);
   --menuitemactivecolor: rgb(177,178,176);
+  --mainviewbgcolor: rgb(245,246,244);
   --desktopbannerbg: url('../img/banner-desktop-light.jpg');
   --mainbannerheaderbgcolor: rgb(43,43,43);
   --logotypesprite_y: 0;
@@ -29,6 +30,7 @@ body {
       --footertextcolor: rgb(205,205,205);
       --menuitemtextcolor: rgb(255,254,253);
       --menuitemactivecolor: rgb(212,212,212);
+      --mainviewbgcolor: rgb(45,46,44);
       --desktopbannerbg: url('../img/banner-desktop-dark.jpg');
       --mainbannerheaderbgcolor: rgb(255,254,253);
       --logotypesprite_y: -72px;
@@ -187,32 +189,59 @@ nav a.logotype {
   letter-spacing: -0.01em;
 }
 
-.mainBannerContent button {
-  font-family: 'Montserrat', sans-serif;
-  color: white;
-  font-size: 1.5vw;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  height: 2.8em;
-  padding: 0 30px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  background-image: linear-gradient(to bottom right, rgb(0,160,90), rgb(0,130,73));
+/* Mouse and Mouse Wheel */
+
+.moveDownDesktop {
+  height: 38px;
+  width: 18px;
+  border: 2px solid var(--textcolor);
+  border-top-left-radius: 50% 25%;
+  border-top-right-radius: 50% 25%;
+  border-bottom-left-radius: 50% 25%;
+  border-bottom-right-radius: 50% 25%;
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  margin-left: -9px;
 }
 
-.mainBannerContent button:hover {
-  background-image: linear-gradient(to bottom right, rgb(0,130,73), rgb(0,160,90));
+@keyframes mouseWheelMover {
+  0% {
+    margin-top: -3px;
+  }
+  50% {
+    margin-top: -1px;
+    opacity: 0.4;
+  }
+  100% {
+    margin-top: -3px;
+  }
 }
 
-.mainBannerContent button:active {
-  background-image: linear-gradient(rgb(0,160,90), rgb(0,160,90));
+.moveDownDesktop .mouseWheel {
+  width: 2px;
+  height: 5px;
+  background: var(--textcolor);
+  display: block;
+  position: absolute;
+  top: 28%;
+  margin-top: -3px;
+  left: 50%;
+  margin-left: -1px;
+  animation: mouseWheelMover 1.5s infinite;
 }
 
 /* Main Viewport */
 
 .mainView {
-  height: 80vh;
+  background-color: var(--mainviewbgcolor);
+}
+
+.mainView,
+.peopleView {
+  min-height: 100%;
+  height: 100vh;
+  padding-top: 1em; /* Unexpected BoxHack Bug */
   cursor: pointer;
   position: relative;
 }
@@ -221,12 +250,23 @@ nav a.logotype {
   cursor: pointer;
 }
 
-.mainView .wrapper h3 {
-  margin-left: 0;
-  padding-left: calc(1.5em + 45px);
+/* Section Headings */
+section .wrapper h3 {
+  font-family: 'Whyte Medium', sans-serif;
+  font-size: 28px;
+  width: 100%;
+  height: 100%;
+  letter-spacing: -0.45px;
+  padding-top: 15px;
+  margin-left: calc(1.5em + 45px);
+  line-height: 150px;
   margin-top: 2em;
   margin-bottom: 1em;
   cursor: pointer;
+}
+
+section .wrapper h3 span {
+  border-top: 10px solid var(--textcolor);
 }
 
 .mainView .wrapper p {
@@ -243,7 +283,7 @@ nav a.logotype {
   align-items: baseline;
   justify-content: space-between;
   list-style: none;
-  margin: 0 3em;
+  margin: 0;
   overflow: hidden;
   padding: 0;
   padding-top: 1em;
@@ -251,14 +291,28 @@ nav a.logotype {
   height: 315px;
 }
 
-.mainView .cards .card {
+.mainView .cards .card .projectCard {
   flex: 1;
   width: 210px;
   height: 280px;
   background-color: rgb(239, 84, 84);
   border-radius: 6px;
+  border-bottom-left-radius: 60px 50px;
   align-self: center;
   align-content: stretch;
+  vertical-align: middle;
+  background-image: url('../img/notselected-project-card.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.mainView .cards .card01 {
+  margin-left: 3em;
+}
+
+.mainView .cards .card05 {
+  margin-right: 3em;
 }
 
 .mainView .cards .card02,
@@ -267,15 +321,13 @@ nav a.logotype {
   margin-right: 1.25em;
 }
 
-.mainView .cards .cardActive {
+.mainView .cards .cardActive .projectCard {
   width: 245px;
   height: 310px;
-/*
-  background-image: url('../img/temp-card-03.png');
+  background-image: url('../img/selected-project-card.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-*/
 }
 
 /* Dark Mode Switch */

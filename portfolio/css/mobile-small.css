@@ -83,7 +83,7 @@
 
 .mainView .cardActive {
   position: absolute;
-  z-index: 100;
+  z-index: 1;
 }
 
 .mainView .cards .card01 {
