@@ -1,11 +1,13 @@
 :root {
   --bgcolor: rgb(251,251,251);
   --textcolor: rgb(55,55,55);
-  --headerbg: rgb(255,255,255);
   --footerbgcolor: rgb(55,55,55);
   --footertextcolor: rgb(251,251,251);
-  --menuitemtextcolor: rgb(5,5,5);
-  --menuitemactivecolor: rgb(112,112,112);
+  --menuitemtextcolor: rgb(204,204,203);
+  --menuitemactivecolor: rgb(177,178,176);
+  --desktopbannerbg: url('../img/banner-desktop-light.jpg');
+  --mainbannerheaderbgcolor: rgb(43,43,43);
+  --logotypesprite_y: 0;
 }
 
 body {
@@ -23,18 +25,26 @@ body {
     body[data-theme=dark] {
       --bgcolor: rgb(28,29,27);
       --textcolor: rgb(235,235,235);
-      --headerbg: rgb(23,23,23);
       --footerbgcolor: rgb(23,23,23);
       --footertextcolor: rgb(205,205,205);
-      --menuitemtextcolor: rgb(255,255,255);
-      --menuitemactivecolor: rgb(222,222,222);
+      --menuitemtextcolor: rgb(255,254,253);
+      --menuitemactivecolor: rgb(212,212,212);
+      --desktopbannerbg: url('../img/banner-desktop-dark.jpg');
+      --mainbannerheaderbgcolor: rgb(255,254,253);
+      --logotypesprite_y: -72px;
     }
 }
 
 @font-face {
-  font-family: 'Silverline-Script';
-  src:  url('silverline-script.woff2') format('woff2'),
-        url('silverline-script.woff') format('woff');
+  font-family: 'Whyte Medium';
+  src:  url('../fonts/whyte/WhyteTrial-Medium.woff2') format('woff2'),
+        url('../fonts/whyte/WhyteTrial-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Whyte Book';
+  src:  url('../fonts/whyte/WhyteTrial-Book.woff2') format('woff2'),
+        url('../fonts/whyte/WhyteTrial-Book.woff') format('woff');
 }
 
 main, .viewport {
@@ -56,13 +66,17 @@ a, a:visited, button {
 /* Header Viewport */
 
 [role=navigation] {
-  position: fixed;
-  background-color: var(--headerbg);
-  font-size: 16px;
-  height: 30px;
+  position: absolute;
   width: 100%;
+  height: 80px;
   padding: 1.6em 0;
+  font-size: 16px;
   z-index: 100;
+  transition: all 0.1s ease-out;
+}
+
+[role=navigation].sticky {
+  background-color: var(--bgcolor);
 }
 
 .wrapper {
@@ -83,63 +97,70 @@ nav ul.navItems {
   flex: auto;
   flex-direction: row;
   font-size: 14px;
-  margin: 0 1.9em 0 0;
-  padding: 0 0 0 3em;
+  margin: 0 65px 0 0;
+  padding: 0 0 0 28px;
 }
 
 [role=menuitem] {
   align-items: flex-start;
   flex: 1;
   order: 1;
-  padding-left: 1em;
+  padding-left: 22px;
   text-align: right;
-  line-height: 1.8em;
+  line-height: 70px;
 }
 
 [role=menuitem] a {
   text-decoration: none;
-  font-weight: 500;
+  font-family: 'Whyte Book', sans-serif;
   color: var(--menuitemtextcolor);
 }
 
 [role=menuitem]:first-child a {
-  color: color: var(--menuitemactivecolor);
+  color: var(--menuitemactivecolor);
 }
 
 nav a.logotype {
-  font-family: 'Silverline-Script', cursive;
-  color: var(--menuitemtextcolor);
-  font-weight: bold;
+  font-family: 'Whyte Medium', sans-serif;
+  color: var(--textcolor);
+  font-weight: normal;
   text-align: left;
-  display: inline-flex;
-  padding-left: 25px;
+  display: inline-block;
+  padding-left: 0px;
   text-transform: lowercase;
-  font-size: 26px;
-  line-height: 22px;
+  font-size: 18px;
+  line-height: 40px;
   text-decoration: none;
+  text-indent: -999px;
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+  background-image: url('../img/logo-sprite.png');
+  background-position-x: left;
+  background-position-y: var(--logotypesprite_y);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .mainBanner {
-  background-image: url('../img/banner-desktop.jpg');
+  background-image: var(--desktopbannerbg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #0e2b3b;
   cursor: pointer;
+  transition: all 0.6667s ease-out;
 }
 
 .mainBannerHeading {
-  background-color: rgb(239,84,84);
-  -webkit-mask: url('../img/think-decide-create.svg') no-repeat 50% 50%;
-  mask: url('../img/think-decide-create.svg') no-repeat 50% 50%;
-  height: 500px;
-  width: 500px;
+  background-color: var(--mainbannerheaderbgcolor);
+  -webkit-mask: url('../img/thinkdecidecreate-desktop.svg') no-repeat left top;
+  mask: url('../img/thinkdecidecreate-desktop.svg') no-repeat left top;
+  height: 240px;
+  width: 240px;
   display: block;
   position: absolute;
-  left: 50%;
-  margin-left: -250px;
-  top: 40vh;
-  margin-top: -250px;
+  transition: all 0.1s ease-in;
 }
 
 .mainBannerContent {
@@ -249,10 +270,12 @@ nav a.logotype {
 .mainView .cards .cardActive {
   width: 245px;
   height: 310px;
+/*
   background-image: url('../img/temp-card-03.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+*/
 }
 
 /* Dark Mode Switch */
@@ -260,9 +283,9 @@ nav a.logotype {
 .darkMode {
   display: block;
   position: absolute;
-  top: -4%;
+  top: 25px;
   right: -4%;
-  width: 110px;
+  width: 85px;
 }
 
 .darkModeLabel {
@@ -279,28 +302,45 @@ nav a.logotype {
 .OnOffSwitch {
     width: 3em;
     display: inline-block;
-    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select: none;
 }
 .OnOffSwitchCheckbox {
     display: none;
 }
 .OnOffSwitchLabel {
-    display: block; overflow: hidden; cursor: pointer;
-    height: 20px; width: 55px; padding: 0; line-height: 20px; top: 5px; margin-top: 0;
-    border: 2px solid rgba(200,200,200,0.3); border-radius: 20px;
-    background-color: #eeeeee;
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    height: 8px;
+    width: 32px;
+    padding: 0;
+    line-height: 20px;
+    top: 5px;
+    margin-top: 0;
+    border: none;
+    border-radius: 20px;
+    background-color: #1c1d1d;
     vertical-align: top;
-    transition: background-color 0.1s ease-in;
+    transition: all 0.1s ease-in;
 }
 .OnOffSwitchLabel:before {
     content: "";
     vertical-align: top;
-    display: block; width: 22px; height: 22px;
+    display: block;
+    width: 16px;
+    height: 16px;
     background: #fff;
-    position: absolute; top: 50%; bottom: 0; margin-top: -32px;
-    right: 83px;
-    border: 2px solid rgba(99,99,99,1); border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    margin-top: -24px;
+    right: 72px;
+    border: none;
+    border-radius: 20px;
     transition: all 0.1s ease-in 0s;
+    box-shadow: 1px 1px 3px 1px rgba(22,22,22,0.4);
 }
 .OnOffSwitchCheckbox:checked + .OnOffSwitchLabel {
     background-color: rgb(209, 84, 84);

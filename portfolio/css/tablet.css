@@ -11,12 +11,8 @@
 }
 
 [role=navigation] {
-  position: fixed;
-  width: 94vw;
-  margin: 3vw;
-  -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.15);
-  -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.15);
-  box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.15);
+  position: absolute;
+  width: 100%;
 }
 
 .navItems {
@@ -41,12 +37,12 @@
 }
 
 .mainBannerHeading {
-  width: 420px;
-  height: 420px;
+  width: 480px;
+  height: 480px;
   left: 50%;
-  margin-left: -210px;
-  top: 48vh;
-  margin-top: -210px;
+  margin-left: -300px;
+  top: 60%;
+  margin-top: -240px;
 }
 
 .mainBannerContent h1 {

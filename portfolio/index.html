@@ -11,47 +11,22 @@
       <link rel="stylesheet" href="css/normalize.css" type="text/css">
       <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,600,700,&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="css/base.css">
-      <link rel="stylesheet" href="css/hamburgers.min.css">
-      <link rel="stylesheet" media="screen and (min-width: 1081px)" href="css/desktop.css">
-      <link rel="stylesheet" media="screen and (min-width: 751px) and (max-width: 1080px)" href="css/tablet.css">
-      <link rel="stylesheet" media="screen and (min-width: 415px) and (max-width: 750px)" href="css/mobile-large.css">
-      <link rel="stylesheet" media="screen and (min-width: 0px) and (max-width: 414px) and (orientation: portrait)" href="css/mobile-small.css">
+      <link rel="stylesheet" media="screen and (min-width: 1080px)" href="css/desktop.css">
+      <link rel="stylesheet" media="screen and (min-width: 769px) and (max-width: 1079px)" href="css/tablet.css">
+      <link rel="stylesheet" media="screen and (min-width: 414px) and (max-width: 768px)" href="css/mobile-large.css">
+      <link rel="stylesheet" media="screen and (min-width: 0px) and (max-width: 413px) and (orientation: portrait)" href="css/mobile-small.css">
   </head>
   <body>
     <header role="banner">
       <nav role="navigation">
         <div class="wrapper">
-          <a href="#" title="logotype" class="logotype">jeremydowe.co</a>
-          <button role="menu" class="hamburger" type="button">
-            <span class="hamburger-box">
-              <span class="hamburger-inner"></span>
-            </span>
-          </button>
+          <a href="#" title="logotype" class="logotype">wearepow.co</a>
           <ul class="navItems">
             <li role="menuitem" class="services"><a href="#" title="services">services</a></li>
             <li role="menuitem" class="projects"><a href="#" title="projects">projects</a></li>
-            <li role="menuitem" class="who"><a href="#" title="who">who</a></li>
-            <li role="menuitem" class="enquires"><a href="#" title="enquires">enquires</a></li>
+            <li role="menuitem" class="who"><a href="#" title="who">people</a></li>
+            <li role="menuitem" class="enquires"><a href="#" title="enquires">contact</a></li>
           </ul>
-
-        </div>
-      </nav>
-    </header>
-    <main>
-      <section class="viewport">
-        <section class="mainBanner">
-          <div class="mainBannerHeading"></div>
-          <article class="mainBannerContent">
-            <h1>Think before you create.</h1>
-            <h3>Every image tells a story. Every project counts.</h3>
-            <button class="startHere">Start Here</button>
-          </article>
-        </section>
-      </section>
-      <section class="mainView">
-        <div class="wrapper">
-          <h3>Selected Projects</h3>
-          <p>Hover over cards to learn more about projects</p>
           <form class="darkMode" method="GET" action="">
             <div class="OnOffSwitch">
                 <input type="checkbox" name="dark_mode" class="OnOffSwitchCheckbox" id="myOnOffSwitch">
@@ -60,16 +35,35 @@
             <label for="myOnOffSwitch" class="darkModeLabel">Dark Mode</label>
           </form>
         </div>
+      </nav>
+    </header>
+    <main>
+      <section class="viewport">
+        <section class="mainBanner">
+          <div class="mainBannerHeading"></div>
+          <article class="mainBannerContent">
+          </article>
+        </section>
+      </section>
+      <section class="mainView">
+        <div class="wrapper">
+          <h3>Selected Projects</h3>
+        </div>
         <ul class="cards">
           <li class="card card01"></li>
           <li class="card card02"></li>
           <li class="card card03 cardActive"></li>
           <li class="card card04"></li>
           <li class="card card05"></li>
-        </article>
+        </ul>
+      </section>
+      <section class="peopleView">
+        <div class="wrapper">
+          <h3>Our People</h3>
+        </div>
       </section>
     </main>
-    <footer role="contentinfo"><p><span>copyright</span> &copy; 2019 <span>jeremydowe.co</span></footer>
+    <footer role="contentinfo"></footer>
     <script src="js/main.js" async defer></script>
   </body>
 </html>

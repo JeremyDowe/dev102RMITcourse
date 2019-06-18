@@ -10,6 +10,12 @@
   margin: 0;
 }
 
+[role=navigation] {
+  background-color: var(--headerbg);
+  position: absolute;
+  width: 100%;
+}
+
 .navItems {
   display: flex;
   align-items: center;
@@ -21,7 +27,7 @@
 }
 
 .wrapper {
-  width: 770px;
+  width: 960px;
   margin: 0 auto;
 }
 
@@ -35,8 +41,8 @@
   width: 480px;
   height: 480px;
   left: 50%;
-  margin-left: -240px;
-  top: 45vh;
+  margin-left: -300px;
+  top: 60%;
   margin-top: -240px;
 }
 
@@ -59,7 +65,3 @@
 }
 
 /* Main Viewport -- Desktop */
-
-.mainView .cards .cardActive {
-  max-width: 245px;
-}
