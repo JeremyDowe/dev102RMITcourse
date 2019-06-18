@@ -11,8 +11,6 @@ darkmodeSwitch.addEventListener('change', function(event){
 });
 
 // OnScroll event listener for sticky navigation
-const documentTop = window.pageYOffset;
-
 window.addEventListener('scroll', function(event){
   let mouse_y = window.pageYOffset;
   let el = document.querySelector('nav');
