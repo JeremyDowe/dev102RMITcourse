@@ -138,11 +138,21 @@ nav a.logotype {
   width: 72px;
   height: 72px;
   overflow: hidden;
+  -webkit-filter: blur(6px);
+  filter: blur(6px);
+  opacity: 0.6;
   background-image: url('../img/logo-sprite.png');
   background-position-x: left;
   background-position-y: var(--logotypesprite_y);
   background-repeat: no-repeat;
   background-size: cover;
+  transition: filter 0.18s ease-in;
+}
+
+nav a#logo > .sharpen {
+  -webkit-filter: blur(0px);
+  filter: blur(0px);
+  transition: all 0.08s ease-in;
 }
 
 .mainBanner {
@@ -152,7 +162,7 @@ nav a.logotype {
   background-repeat: no-repeat;
   background-color: #0e2b3b;
   cursor: pointer;
-  transition: all 0.6667s ease-out;
+  transition: all 0.09s ease-out;
 }
 
 .mainBannerHeading {
@@ -164,7 +174,7 @@ nav a.logotype {
   width: 240px;
   display: block;
   position: absolute;
-  transition: all 0.2s ease-in;
+  transition: all 0.02s ease-in;
 }
 
 .mainBannerContent {
