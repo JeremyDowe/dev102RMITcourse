@@ -40,9 +40,10 @@
 .mainBannerHeading {
   width: 480px;
   height: 480px;
+  -webkit-mask-size: cover;
   left: 50%;
   margin-left: -300px;
-  top: 60%;
+  top: 55%;
   margin-top: -240px;
 }
 

@@ -1,3 +1,39 @@
+const viewport_h = window.innerHeight || document.documentElement.clientHeight;
+const viewportsOnPage = document.querySelectorAll('.viewport');
+
+function viewportSetHeight() {
+  for(i=0;i<viewportsOnPage.length;i++){
+    viewportsOnPage[i].style.height = 978 + 'px';
+  }
+};
+
+//call the func.
+viewportSetHeight();
+
+// OnScroll event listener for sticky navigation
+window.addEventListener('scroll', function(event){
+  let mouse_y = window.pageYOffset;
+  let el = document.querySelector('nav');
+  if (mouse_y > 580) {
+      el.style.position = 'absolute';
+      el.classList.add('sticky');
+      if (mouse_y <= viewport_h * 3.332) {
+          el.style.position = 'fixed';
+          el.style.top = window.innerHeight;
+      }
+  } else {
+    el.style.position = 'absolute';
+    el.classList.remove('sticky');
+  }
+});
+
+window.addEventListener('resize', function(event){
+  const viewportsOnPage = document.querySelectorAll('.viewport');
+  viewportsOnPage.forEach(function(elems, index){
+      elems.style.height = event.srcElement.innerHeight + 'px';
+  });
+});
+
 // Dark mode checkbox (change) event
 const darkmodeSwitch = document.querySelector('.OnOffSwitch');
 
@@ -8,23 +44,4 @@ darkmodeSwitch.addEventListener('change', function(event){
    } else {
      document.body.removeAttribute('data-theme')
    }
-});
-
-// OnScroll event listener for sticky navigation
-window.addEventListener('scroll', function(event){
-  let mouse_y = window.pageYOffset;
-  let el = document.querySelector('nav');
-  if (mouse_y > 240){
-      el.style.position = 'fixed';
-      el.classList.add('sticky');
-      if (mouse_y <= 999) {
-          el.style.position = 'absolute';
-          el.style.top = 0;
-      }
-  } else if (mouse_y >= 1000) {
-      el.classList.remove('sticky');
-  } else {
-    el.style.position = 'absolute';
-    el.classList.remove('sticky');
-  }
 });

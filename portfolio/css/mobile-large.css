@@ -69,50 +69,47 @@
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  padding-top: 20px;
-  height: 320px;
+  height: 300px;
   overflow: visible;
 }
 
 .mainView .card {
   flex: 1;
-  height: 180px;
+  height: auto;
   position: absolute;
 }
 
 .mainView .cardActive {
   position: absolute;
-  z-index: 100;
+  z-index: 10;
 }
 
 .mainView .cards .card01 {
-  background-color: rgb(240,211,212);
-  top: 0%;
-  right: 33%;
-  z-index: 0;
+  top: 10px;
+  right: 38%;
+  margin: 0;
+  z-index: 1;
 }
 
 .mainView .cards .card02 {
-  background-color: rgb(240,179,180);
-  top: 2%;
-  right: 33%;
-  z-index: 5;
+  top: 5px;
+  right: 38%;
   margin: 0;
+  z-index: 2;
 }
 
 .mainView .cards .card04 {
-  background-color: rgb(239,148,148);
-  top: 4%;
-  right: 33%;
-  z-index: 10;
+  top: 0px;
+  right: 38%;
   margin: 0;
+  z-index: 0;
 }
 
 .mainView .cards .card05 {
-  background-color: rgb(239,84,84);
-  top: 6%;
-  right: 33%;
-  z-index: 15;
+  top: -10px;
+  right: 38%;
+  margin: 0;
+  z-index: -1;
 }
 
 .darkMode {

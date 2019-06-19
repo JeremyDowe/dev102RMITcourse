@@ -21,12 +21,14 @@
       <nav role="navigation">
         <div class="wrapper">
           <a href="#" title="logotype" class="logotype">wearepow.co</a>
+          <!--
           <ul class="navItems">
             <li role="menuitem" class="services"><a href="#" title="services">services</a></li>
             <li role="menuitem" class="projects"><a href="#" title="projects">projects</a></li>
             <li role="menuitem" class="who"><a href="#" title="who">people</a></li>
             <li role="menuitem" class="enquires"><a href="#" title="enquires">contact</a></li>
           </ul>
+          -->
           <form class="darkMode" method="GET" action="">
             <div class="OnOffSwitch">
                 <input type="checkbox" name="dark_mode" class="OnOffSwitchCheckbox" id="myOnOffSwitch">
@@ -48,7 +50,7 @@
           </div>
         </section>
       </section>
-      <section class="mainView">
+      <section class="viewport mainView">
         <div class="wrapper">
           <h3 class="sectionHeaderContainer">
             <span aria-title="Section Header - Selected Projects">Selected Projects</span>
@@ -63,6 +65,8 @@
           </li>
           <li class="card card03 cardActive">
             <div class="projectCard"></div>
+            <h4>Amazon News</h4>
+            <button>See Insights</button>
           </li>
           <li class="card card04">
             <div class="projectCard"></div>
@@ -72,15 +76,22 @@
           </li>
         </ul>
       </section>
-      <section class="peopleView">
+      <section class="viewport peopleView">
         <div class="wrapper">
           <h3 class="sectionHeaderContainer">
             <span aria-title="Section Header - Our People">Our People</span>
           </h3>
         </div>
       </section>
+      <section class="viewport servicesView">
+        <div class="wrapper">
+          <h3 class="sectionHeaderContainer">
+            <span aria-title="Section Header - Our Services">Services</span>
+          </h3>
+        </div>
+      </section>
     </main>
-    <footer role="contentinfo"></footer>
+    <footer class="viewport" role="contentinfo"></footer>
     <script src="js/main.js" async defer></script>
   </body>
 </html>

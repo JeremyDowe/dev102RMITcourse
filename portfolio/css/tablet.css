@@ -65,14 +65,51 @@
 
 /* Main Viewport -- Tablet */
 
-.mainView .cards .card {
+.mainView .cards {
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  height: 300px;
+  overflow: visible;
+}
+
+.mainView .card {
   flex: 1;
-  width: 200px;
-  height: 250px;
-  background-color: rgb(239, 84, 84);
-  border-radius: 6px;
-  align-self: center;
-  align-content: stretch;
+  height: auto;
+  position: absolute;
+}
+
+.mainView .cardActive {
+  position: absolute;
+  z-index: 10;
+}
+
+.mainView .cards .card01 {
+  top: 10px;
+  right: 38%;
+  margin: 0;
+  z-index: 1;
+}
+
+.mainView .cards .card02 {
+  top: 5px;
+  right: 38%;
+  margin: 0;
+  z-index: 2;
+}
+
+.mainView .cards .card04 {
+  top: 0px;
+  right: 38%;
+  margin: 0;
+  z-index: 0;
+}
+
+.mainView .cards .card05 {
+  top: -10px;
+  right: 38%;
+  margin: 0;
+  z-index: -1;
 }
 
 .darkMode {
