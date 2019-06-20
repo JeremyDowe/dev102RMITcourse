@@ -7,8 +7,10 @@
   --menuitemactivecolor: rgb(177,178,176);
   --mainviewbgcolor: rgb(245,246,244);
   --desktopbannerbg: url('../img/banner-desktop-light.jpg');
+  --servicesviewbg: url('../img/services-background.png');
   --mainbannerheaderbgcolor: rgb(43,43,43);
   --logotypesprite_y: 0;
+  --hamburgerbg: rgba(54,54,54,1);
 }
 
 body {
@@ -32,8 +34,10 @@ body {
       --menuitemactivecolor: rgb(212,212,212);
       --mainviewbgcolor: rgb(45,46,44);
       --desktopbannerbg: url('../img/banner-desktop-dark.jpg');
+      --servicesviewbg: url('../img/services-background-dark.png');
       --mainbannerheaderbgcolor: rgb(255,254,253);
       --logotypesprite_y: -72px;
+      --hamburgerbg: rgba(254,254,254,1);
     }
 }
 
@@ -111,6 +115,7 @@ nav ul.navItems {
   padding-left: 22px;
   text-align: right;
   line-height: 70px;
+  visibility: collapse;
 }
 
 [role=menuitem] a {
@@ -121,6 +126,15 @@ nav ul.navItems {
 
 [role=menuitem]:first-child a {
   color: var(--menuitemactivecolor);
+}
+
+[role=menuitem].hamburger {
+  display: flex;
+  height: 16px;
+  width: 14px;
+  margin: 2px 0;
+  background-color: var(--hamburgerbg);
+  visibility: visible;
 }
 
 nav a.logotype {
@@ -157,7 +171,7 @@ nav a#logo > .sharpen {
 
 .mainBanner {
   background-image: var(--desktopbannerbg);
-  background-position: center center;
+  background-position: left top;
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #0e2b3b;
@@ -252,13 +266,19 @@ nav a#logo > .sharpen {
 .viewport {
   min-height: 100%;
   width: 100vw;
-  /* padding: 3em 0; /* Unexpected BoxHack Bug */
   cursor: pointer;
   position: relative;
 }
 
 .mainView .wrapper {
   cursor: pointer;
+}
+
+.servicesView {
+  background-image: var(--servicesviewbg);
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Section Headings */

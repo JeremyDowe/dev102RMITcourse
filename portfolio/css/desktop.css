@@ -10,6 +10,10 @@
   margin: 0;
 }
 
+.mainView, .peopleView, .servicesView {
+  padding-top: 1em; /* Unexpected BoxHack Bug */
+}
+
 [role=navigation] {
   background-color: var(--headerbg);
   position: absolute;
@@ -34,7 +38,7 @@
 .mainBanner {
   height: 100vh;
   position: relative;
-  background-position: center center;
+  background-position: right top;
 }
 
 .mainBannerHeading {

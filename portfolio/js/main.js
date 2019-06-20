@@ -12,9 +12,22 @@ function blurFunc(element) {
   let myTimeOut = setTimeout(function(){
     logo.style.filter = 'blur(0px)';
     logo.style.WebkitFilter = 'blur(0px)';
-    logo.style.opacity = '1';
+    logo.style.opacity = 1;
   },500);
 };
+
+// hamburger menu
+const hamburgermenu = document.querySelector('.iconmenuitem');
+
+hamburgermenu.addEventListener('click', function(event){
+  document.querySelectorAll('li').forEach(function(elems, index){
+    //elems.classList.remove('textmenuitem');
+    if (elems.offsetWidth == 0 && elems.offsetHeight == 0){
+      console.log('hidden');
+      //elems.classList.add('textmenuitem');
+    }
+  });
+});
 
 //call the func.
 viewportSetHeightFunc();
@@ -50,11 +63,17 @@ darkmodeSwitch.addEventListener('change', function(event){
 	 //event.target.checked TRUE or FALSE set the attribute on document body
    if (event.target.checked){
      document.body.setAttribute('data-theme', 'dark');
+     window.location.hash = 'darkmode';
    } else {
      document.body.removeAttribute('data-theme');
+     window.location.hash = '';
    };
 });
 
 window.addEventListener('load', function(event){
     blurFunc('#logo');
+    if (window.location.hash.substring(1) == 'darkmode'){
+      document.body.setAttribute('data-theme', 'dark');
+      document.getElementById('myOnOffSwitch').checked = true;
+    }
 });
