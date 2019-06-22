@@ -16,19 +16,6 @@ function blurFunc(element) {
   },500);
 };
 
-// hamburger menu
-const hamburgermenu = document.querySelector('.iconmenuitem');
-
-hamburgermenu.addEventListener('click', function(event){
-  document.querySelectorAll('li').forEach(function(elems, index){
-    //elems.classList.remove('textmenuitem');
-    if (elems.offsetWidth == 0 && elems.offsetHeight == 0){
-      console.log('hidden');
-      //elems.classList.add('textmenuitem');
-    }
-  });
-});
-
 //call the func.
 viewportSetHeightFunc();
 
@@ -36,13 +23,16 @@ viewportSetHeightFunc();
 window.addEventListener('scroll', function(event){
   let mouse_y = window.pageYOffset;
   let el = document.querySelector('nav');
-  if (mouse_y > 580) {
+  let elHeading = document.querySelector('.mainBannerHeading');
+  if (mouse_y > 100 && mouse_y < 580) {
       el.style.position = 'absolute';
       el.classList.add('sticky');
-      if (mouse_y <= viewport_h * 2) {
-          el.style.position = 'fixed';
-          el.style.top = window.innerHeight;
-      }
+      elHeading.style.top = (-1 * (mouse_y/2)+330) + 'px';
+      console.log('this first part called');
+  } else if (mouse_y > 580 && mouse_y < viewport_h * 4) {
+        el.style.position = 'fixed';
+        //el.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+        console.log('this second part called ' + window.parent);
   } else {
     el.style.position = 'absolute';
     el.classList.remove('sticky');

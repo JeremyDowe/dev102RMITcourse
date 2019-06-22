@@ -30,39 +30,6 @@
   margin: 0 auto;
 }
 
-.mainBanner {
-  height: 100vh;
-  position: relative;
-  background-position: center center;
-}
-
-.mainBannerHeading {
-  width: 480px;
-  height: 480px;
-  left: 50%;
-  margin-left: -300px;
-  top: 60%;
-  margin-top: -240px;
-}
-
-.mainBannerContent h1 {
-  font-size: 1.6em;
-  font-weight: 700;
-}
-
-.mainBannerContent h3 {
-  font-size: 1.1em;
-  font-weight: 500;
-}
-
-.mainBannerContent button {
-  font-size: 1.25em;
-  height: 3.2em;
-  padding: 0 30px;
-  margin-top: 1em;
-  border-radius: 5px;
-}
-
 /* Main Viewport -- Tablet */
 
 .mainView .cards {
