@@ -3,7 +3,7 @@ const viewportsOnPage = document.querySelectorAll('.viewport');
 
 function viewportSetHeightFunc() {
   for(i=0;i<viewportsOnPage.length;i++){
-    viewportsOnPage[i].style.height = 978 + 'px';
+    viewportsOnPage[i].style.height = window.innerHeight + 'px';
   }
 };
 
@@ -24,18 +24,19 @@ window.addEventListener('scroll', function(event){
   let mouse_y = window.pageYOffset;
   let el = document.querySelector('nav');
   let elHeading = document.querySelector('.mainBannerHeading');
-  if (mouse_y > 100 && mouse_y < 580) {
+  if (mouse_y > 1 && mouse_y < 399) {
       el.style.position = 'absolute';
+      el.style.top = '-200px';
+  } else if (mouse_y > 400 && mouse_y < (window.innerHeight*3)) {
+      el.style.top = '0px';
       el.classList.add('sticky');
-      elHeading.style.top = (-1 * (mouse_y/2)+330) + 'px';
+      el.style.position = 'fixed';
+      elHeading.style.top = (-1 * (mouse_y/2)+window.innerHeight/2) + 'px';
       console.log('this first part called');
-  } else if (mouse_y > 580 && mouse_y < viewport_h * 4) {
-        el.style.position = 'fixed';
-        //el.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
-        console.log('this second part called ' + window.parent);
   } else {
-    el.style.position = 'absolute';
-    el.classList.remove('sticky');
+      el.style.top = '0px';
+      el.style.position = 'absolute';
+      el.classList.remove('sticky');
   }
 });
 
