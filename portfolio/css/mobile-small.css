@@ -27,20 +27,26 @@
   width: 100%;
   margin: 0 auto;
 }
+section .wrapper h3 {
+  width: auto;
+}
 
-/* Main Viewport -- Mobile Small */
+/* Main Viewport -- Tablet */
 
 .mainView .cards {
   flex-direction: column;
   justify-content: space-between;
   position: relative;
   height: 300px;
-  overflow: visible;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
 }
 
 .mainView .card {
   flex: 1;
   height: auto;
+  width: 245px;
   position: absolute;
 }
 
@@ -49,38 +55,14 @@
   z-index: 10;
 }
 
-.mainView .cards .card01 {
-  top: 10px;
-  right: 38%;
-  margin: 0;
-  z-index: 1;
-}
-
-.mainView .cards .card02 {
-  top: 5px;
-  right: 38%;
-  margin: 0;
-  z-index: 2;
-}
-
-.mainView .cards .card04 {
-  top: 0px;
-  right: 38%;
-  margin: 0;
-  z-index: 0;
-}
-
-.mainView .cards .card05 {
-  top: -10px;
-  right: 38%;
-  margin: 0;
-  z-index: -1;
+.mainView .cards .card:first-child,
+.mainView .cards .card:nth-child(2),
+.mainView .cards .card:nth-child(4),
+.mainView .cards .card:last-child {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .darkMode {
-  top: 0;
   right: 0;
-}
-.darkModeLabel {
-  visibility: hidden;
 }

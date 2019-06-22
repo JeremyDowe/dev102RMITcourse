@@ -319,7 +319,7 @@ section .wrapper h3 span {
   /*padding-top: 1em;*/
   cursor: pointer;
   min-height: 50%;
-  min-width: 800px;
+  width: 1280px;
 }
 
 .mainView .cards .card {

@@ -35,4 +35,10 @@
   margin: 0 auto;
 }
 
+.mainView .cards {
+  width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 /* Main Viewport -- Desktop */
