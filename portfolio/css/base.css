@@ -82,7 +82,7 @@ a, a:visited, button {
 
 [role=navigation].sticky {
   background-color: var(--bgcolor);
-  transition: all 1.475s ease-out;
+  transition: all 1.1s ease-out;
   z-index: 1000;
 }
 
@@ -156,7 +156,7 @@ nav a.logotype {
 nav a#logo > .sharpen {
   -webkit-filter: blur(0px);
   filter: blur(0px);
-  transition: all 0.08s ease-in;
+  transition: all 0.08s ease-in-out;
 }
 
 .mainBanner {
@@ -167,7 +167,7 @@ nav a#logo > .sharpen {
   background-repeat: no-repeat;
   background-color: #0e2b3b;
   cursor: pointer;
-  transition: all 0.09s ease-out;
+  transition: all 0.25s ease-in-out;
 }
 
 .mainBannerHeading {
@@ -184,7 +184,7 @@ nav a#logo > .sharpen {
   left: 50%;
   z-index: 1;
   margin-left: -240px;
-  transition: top 1.5s ease-out;
+  transition: top 1.15s ease-in-out;
 }
 
 .mainBannerContent {
