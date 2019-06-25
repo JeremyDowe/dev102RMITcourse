@@ -1,14 +1,6 @@
 const viewport_h = window.outerHeight || document.documentElement.clientHeight;
 const viewportsOnPage = document.querySelectorAll('.viewport');
 
-function viewportSetHeightFunc() {
-  if (window.innerWidth > 376) {
-    for(i=0;i<viewportsOnPage.length;i++){
-      viewportsOnPage[i].style.height = window.innerHeight + 'px';
-    }
-  }
-};
-
 function blurFunc(element) {
   const logo = document.querySelector(element);
   let myTimeOut = setTimeout(function(){
@@ -17,9 +9,6 @@ function blurFunc(element) {
     logo.style.opacity = 1;
   },500);
 };
-
-//call the func.
-viewportSetHeightFunc();
 
 // OnScroll event listener for sticky navigation
 window.addEventListener('scroll', function(event){
@@ -41,21 +30,32 @@ window.addEventListener('scroll', function(event){
 window.addEventListener('scroll', function(event){
   let mouse_y = window.pageYOffset;
   let elHeading = document.querySelector('.mainBannerHeading');
-  let offSetYScroll = 128; // interger
+  let offSetYScroll = 3.332; // interger
+  let objCeiling = 10.5;
   let centerObj = window.innerHeight*0.3332 - elHeading.style.height; // center elHeading
+  elHeading.style.top = centerObj + 'px';
   if (mouse_y < offSetYScroll) {
     elHeading.style.top = centerObj + 'px';
   } else {
-    elHeading.style.top = window.innerHeight/mouse_y * offSetYScroll + 'px';
+    if (mouse_y > mouse_y/window.innerHeight * objCeiling){
+      elHeading.style.top = mouse_y/window.innerHeight / objCeiling + 'px';
+    } else {
+      elHeading.style.top = centerObj + 'px';
+    }
   }
 });
 
-window.addEventListener('resize', function(event){
-  const viewportsOnPage = document.querySelectorAll('.viewport');
-  if (window.innerWidth > 376) {
-      for(i=0;i<viewportsOnPage.length;i++){
-        viewportsOnPage[i].style.height = window.innerHeight + 'px';
-      }
+// OnScroll event listener for backgroundPositionY
+window.addEventListener('scroll', function(event){
+  let mouse_y = window.pageYOffset;
+  let elHeading = document.querySelector('.mainBanner');
+  let offSetYTop = 0; // interger
+  let int = 200;
+  let centerObj = window.innerHeight*0.3332 - elHeading.style.height; // center elHeading
+  if (mouse_y < offSetYTop) {
+    elHeading.style.backgroundPositionY = centerObj + 'px';
+  } else {
+    elHeading.style.backgroundPositionY = mouse_y/window.innerHeight * int + 'px';
   }
 });
 

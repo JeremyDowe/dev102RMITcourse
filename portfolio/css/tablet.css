@@ -27,26 +27,6 @@ body {
   display: block;
 }
 
-.mainBannerHeading {
-  flex-direction: column;
-  font-variant-ligatures: normal;
-  margin-left: -135px;
-}
-
-.mainBannerHeading h1 {
-  font-size: 400%;
-  padding: 0 5px;
-}
-
-.mainBannerHeading h2 {
-  width: auto;
-  background: none;
-  color: var(--textcolor);
-  font-size: 200%;
-  line-height: 80%;
-  padding: 10px 5px;
-}
-
 .wrapper {
   width: 100%;
   margin: 0 auto;
@@ -62,6 +42,8 @@ section .wrapper h3 {
 .darkMode {
   right: 0;
 }
+
+section.peopleView { margin-bottom: -30px; }
 
 section.mainView {
   background-color: white;
@@ -108,7 +90,7 @@ body[data-theme=dark] section.mainView .wrapper h3.sectionHeaderContainer {
 .mainView .cardActive {
   position: absolute;
   z-index: 10;
-  left: 18%;
+  left: 33ch;
 }
 
 .mainView .cards .card:first-child,
@@ -117,7 +99,7 @@ body[data-theme=dark] section.mainView .wrapper h3.sectionHeaderContainer {
 .mainView .cards .card:last-child {
   margin-left: 0;
   margin-right: 0;
-  left: 18%;
+  left: 33ch;
 }
 
 ol.peopleCircles {

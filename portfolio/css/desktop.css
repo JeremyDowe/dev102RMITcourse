@@ -12,6 +12,7 @@
 
 .mainView, .peopleView, .servicesView {
   padding-top: 1em; /* Unexpected BoxHack Bug */
+  height: 100vh;
 }
 
 [role=navigation] {

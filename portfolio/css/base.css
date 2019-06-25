@@ -189,19 +189,19 @@ nav a#logo > .sharpen {
 .mainBanner {
   height: 100vh;
   background-image: var(--desktopbannerbg);
-  background-position: center top;
+  background-position: center 0px;
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #0e2b3b;
   cursor: pointer;
-  transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-out;
 }
 
 .mainBannerHeading {
   display: flex;
   position: absolute;
   height: auto;
-  top: 290px;
+  top: 325.87px;
   left: 50%;
   z-index: 0;
   zoom: 1;
@@ -209,7 +209,7 @@ nav a#logo > .sharpen {
   text-align: left;
   padding-top: 1.8vw;
   color: var(--mainbannerheaderbgcolor);
-  transition: top 0.5s ease-in-out;
+  transition: top 1.5s ease-in-out;
 }
 
 .mainBannerHeading h1 {

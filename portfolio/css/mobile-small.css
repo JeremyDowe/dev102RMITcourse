@@ -14,6 +14,11 @@ body {
   margin: 0;
 }
 
+a.logotype {
+  margin-left: 10px;
+  margin-top: 4px;
+}
+
 [role=navigation] {
   position: absolute;
   width: 100%;
@@ -93,7 +98,7 @@ body[data-theme=dark] section.mainView .wrapper h3.sectionHeaderContainer {
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  height: 300px;
+  height: 500px;
   width: 100%;
   text-align: center;
 }
@@ -120,6 +125,12 @@ body[data-theme=dark] section.mainView .wrapper h3.sectionHeaderContainer {
   left: 18%;
 }
 
+/* People List */
+
+section.peopleView {
+  margin-bottom: -30px;
+}
+
 ol.peopleCircles {
   flex-direction: column;
 }
@@ -134,10 +145,31 @@ ol.peopleCircles li {
 
 ol.peopleCircles li:nth-child(2) {
   height: auto;
-  flex-basis: 15ch;
+  flex-basis: 25ch;
 }
 
 ol.peopleCircles li span {
   width: 120px;
   height: 120px;
+}
+
+/* Services List */
+
+ul.servicesList {
+  flex-direction: column;
+  padding-bottom: 100px;
+}
+
+ul.servicesList li {
+  flex: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 15ch;
+  height: auto;
+  width: 100vw;
+  padding-left: 90px;
+}
+
+ul.servicesList li h4 {
+  line-height: 1.2;
 }
