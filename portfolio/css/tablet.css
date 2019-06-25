@@ -1,9 +1,13 @@
 /* Banner Viewport -- Tablet */
 
+body {
+  background-color: white;
+}
+
 .viewport {
   position: relative;
   display: block;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Edmondsans Regular', sans-serif;
   font-weight: normal;
   font-size: 1em;
   padding: 0;
@@ -15,14 +19,32 @@
   width: 100%;
 }
 
-.navItems {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
+[role=navigation] ul.navItems {
+  display: none;
 }
 
 [role=menu] {
-  display: none;
+  display: block;
+}
+
+.mainBannerHeading {
+  flex-direction: column;
+  font-variant-ligatures: normal;
+  margin-left: -135px;
+}
+
+.mainBannerHeading h1 {
+  font-size: 400%;
+  padding: 0 5px;
+}
+
+.mainBannerHeading h2 {
+  width: auto;
+  background: none;
+  color: var(--textcolor);
+  font-size: 200%;
+  line-height: 80%;
+  padding: 10px 5px;
 }
 
 .wrapper {
@@ -32,9 +54,40 @@
 
 section .wrapper h3 {
   width: auto;
+  padding-left: 0;
+  margin-left: 18%;
+  line-height: 6;
 }
 
-/* Main Viewport -- Tablet */
+.darkMode {
+  right: 0;
+}
+
+section.mainView {
+  background-color: white;
+}
+
+section.peopleView {
+  background-color: var(--bgcolor);
+}
+
+body[data-theme=dark] section.mainView .wrapper h3 span {
+  border-top: 5.75px solid var(--mainViewHeadingColor);
+}
+
+body section.mainView .wrapper h3 span {
+  border-top: 5.75px solid var(--mainViewHeadingColor);
+}
+
+body section.mainView .wrapper h3.sectionHeaderContainer span {
+  color: var(--mainViewHeadingColor);
+}
+
+body[data-theme=dark] section.mainView .wrapper h3.sectionHeaderContainer {
+  color: var(--mainViewHeadingColor);
+}
+
+/* Main Viewport -- Mobile */
 
 .mainView .cards {
   flex-direction: column;
@@ -43,7 +96,6 @@ section .wrapper h3 {
   height: 300px;
   width: 100%;
   text-align: center;
-  overflow: hidden;
 }
 
 .mainView .card {
@@ -56,6 +108,7 @@ section .wrapper h3 {
 .mainView .cardActive {
   position: absolute;
   z-index: 10;
+  left: 18%;
 }
 
 .mainView .cards .card:first-child,
@@ -64,8 +117,27 @@ section .wrapper h3 {
 .mainView .cards .card:last-child {
   margin-left: 0;
   margin-right: 0;
+  left: 18%;
 }
 
-.darkMode {
-  right: 0;
+ol.peopleCircles {
+  flex-direction: column;
+}
+
+ol.peopleCircles li {
+  flex: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 15ch;
+  height: auto;
+}
+
+ol.peopleCircles li:nth-child(2) {
+  height: auto;
+  flex-basis: 15ch;
+}
+
+ol.peopleCircles li span {
+  width: 120px;
+  height: 120px;
 }

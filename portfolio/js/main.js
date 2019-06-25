@@ -2,8 +2,10 @@ const viewport_h = window.outerHeight || document.documentElement.clientHeight;
 const viewportsOnPage = document.querySelectorAll('.viewport');
 
 function viewportSetHeightFunc() {
-  for(i=0;i<viewportsOnPage.length;i++){
-    viewportsOnPage[i].style.height = window.innerHeight + 'px';
+  if (window.innerWidth > 376) {
+    for(i=0;i<viewportsOnPage.length;i++){
+      viewportsOnPage[i].style.height = window.innerHeight + 'px';
+    }
   }
 };
 
@@ -50,9 +52,11 @@ window.addEventListener('scroll', function(event){
 
 window.addEventListener('resize', function(event){
   const viewportsOnPage = document.querySelectorAll('.viewport');
-  viewportsOnPage.forEach(function(elems, index){
-      elems.style.height = event.srcElement.outerHeight + 'px';
-  });
+  if (window.innerWidth > 376) {
+      for(i=0;i<viewportsOnPage.length;i++){
+        viewportsOnPage[i].style.height = window.innerHeight + 'px';
+      }
+  }
 });
 
 // Dark mode checkbox (change) event
