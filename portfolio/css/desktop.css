@@ -12,7 +12,7 @@
 
 .mainView, .peopleView, .servicesView {
   padding-top: 1em; /* Unexpected BoxHack Bug */
-  height: 100vh;
+  height: 100vh; /* set the height of the sections to 100 viewport */
 }
 
 [role=navigation] {
